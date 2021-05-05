@@ -144,6 +144,7 @@ extension Reducer {
 
 // NB: Deprecated after 0.1.4:
 
+#if DEBUG
 extension Reducer {
   @available(*, unavailable, renamed: "debug(_:environment:)")
   public func debug(
@@ -177,6 +178,7 @@ extension Reducer {
     self.debug(prefix, state: toLocalState, action: toLocalAction, environment: toDebugEnvironment)
   }
 }
+#endif
 
 extension WithViewStore {
   @available(*, unavailable, renamed: "debug(_:)")

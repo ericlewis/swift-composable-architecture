@@ -121,6 +121,7 @@ public struct ActionSheetState<Action> {
   public typealias Button = AlertState<Action>.Button
 }
 
+#if DEBUG
 @available(iOS 13, *)
 @available(macCatalyst 13, *)
 @available(macOS, unavailable)
@@ -136,6 +137,7 @@ extension ActionSheetState: CustomDebugOutputConvertible {
     return "\(Self.self)\(ComposableArchitecture.debugOutput(fields))"
   }
 }
+#endif
 
 @available(iOS 13, *)
 @available(macCatalyst 13, *)

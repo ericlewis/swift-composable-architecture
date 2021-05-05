@@ -178,6 +178,7 @@ extension View {
   }
 }
 
+#if DEBUG
 extension AlertState: CustomDebugOutputConvertible {
   public var debugOutput: String {
     let fields = (
@@ -189,6 +190,7 @@ extension AlertState: CustomDebugOutputConvertible {
     return "\(Self.self)\(ComposableArchitecture.debugOutput(fields))"
   }
 }
+#endif
 
 extension AlertState: Equatable where Action: Equatable {
   public static func == (lhs: Self, rhs: Self) -> Bool {

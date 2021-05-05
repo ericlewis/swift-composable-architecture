@@ -1,6 +1,6 @@
 import CasePaths
 import Dispatch
-
+#if DEBUG
 /// Determines how the string description of an action should be printed when using the `.debug()`
 /// higher-order reducer.
 public enum ActionFormat {
@@ -159,3 +159,4 @@ private let _queue = DispatchQueue(
   label: "co.pointfree.ComposableArchitecture.DebugEnvironment",
   qos: .background
 )
+#endif

@@ -1,5 +1,6 @@
 import Foundation
 
+#if DEBUG
 func debugOutput(_ value: Any, indent: Int = 0) -> String {
   var visitedItems: Set<ObjectIdentifier> = []
 
@@ -156,10 +157,6 @@ extension String {
   }
 }
 
-public protocol CustomDebugOutputConvertible {
-  var debugOutput: String { get }
-}
-
 extension Date: CustomDebugOutputConvertible {
   public var debugOutput: String {
     dateFormatter.string(from: self)
@@ -176,6 +173,11 @@ extension URL: CustomDebugOutputConvertible {
   public var debugOutput: String {
     self.absoluteString
   }
+}
+#endif
+
+public protocol CustomDebugOutputConvertible {
+  var debugOutput: String { get }
 }
 
 #if DEBUG

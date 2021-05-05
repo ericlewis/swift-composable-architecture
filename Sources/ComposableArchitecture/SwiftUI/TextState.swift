@@ -303,6 +303,7 @@ extension LocalizedStringKey: CustomDebugOutputConvertible {
   }
 }
 
+#if DEBUG
 extension TextState: CustomDebugOutputConvertible {
   public var debugOutput: String {
     func debugOutputHelp(_ textState: Self) -> String {
@@ -370,3 +371,4 @@ extension TextState: CustomDebugOutputConvertible {
       """#
   }
 }
+#endif
